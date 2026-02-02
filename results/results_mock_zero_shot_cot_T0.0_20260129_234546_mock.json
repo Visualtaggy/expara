@@ -1,0 +1,54 @@
+{
+  "model": "mock",
+  "prompt_type": "zero_shot_cot",
+  "temperature": 0.0,
+  "num_pairs": 800,
+  "avg_expara_sim": 0.7738769446938973,
+  "std_expara_sim": 0.10997376273416234,
+  "avg_semantic_sim": 0.9020633867755532,
+  "avg_entailment_sym": 0.6516637681727298,
+  "avg_step_align": 0.8897890534065663,
+  "avg_fact_overlap": 0.6093720238095238,
+  "avg_llm_judge": 0.0,
+  "answer_consistency_rate": 1.0,
+  "by_task_type": {
+    "math": {
+      "avg_expara_sim": 0.6791088732862767,
+      "num_pairs": 200,
+      "answer_consistency": 1.0
+    },
+    "commonsense": {
+      "avg_expara_sim": 0.9319730511176237,
+      "num_pairs": 200,
+      "answer_consistency": 1.0
+    },
+    "science": {
+      "avg_expara_sim": 0.6966211657244243,
+      "num_pairs": 200,
+      "answer_consistency": 1.0
+    },
+    "logic": {
+      "avg_expara_sim": 0.7878046886472643,
+      "num_pairs": 200,
+      "answer_consistency": 1.0
+    }
+  },
+  "by_paraphrase_type": {
+    "lexical": {
+      "avg_expara_sim": 0.7696805420012659,
+      "num_pairs": 200
+    },
+    "syntactic": {
+      "avg_expara_sim": 0.7736731071640588,
+      "num_pairs": 200
+    },
+    "elaborative": {
+      "avg_expara_sim": 0.7768161154896365,
+      "num_pairs": 200
+    },
+    "mixed": {
+      "avg_expara_sim": 0.7753380141206273,
+      "num_pairs": 200
+    }
+  }
+}

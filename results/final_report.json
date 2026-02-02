@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-01-31T05:58:38.187772",
+  "models": {
+    "Qwen/Qwen2.5-7B-Instruct": {
+      "expara_sim": 0.4791801565289406,
+      "expara_sim_std": 0.16693735203263438,
+      "answer_consistency": 0.21285714285714286,
+      "metrics": {
+        "semantic_sim": 0.8111915952073676,
+        "entailment_sym": 0.35947628176368845,
+        "step_align": 0.5479098251856852,
+        "fact_overlap": 0.03369465846465587,
+        "llm_judge": 0.0
+      },
+      "divergence_rate": 0.28187919463087246,
+      "by_task_type": {
+        "math": {
+          "avg_expara_sim": 0.6465903930687383,
+          "num_pairs": 400,
+          "answer_consistency": 0.4175
+        },
+        "commonsense": {
+          "avg_expara_sim": 0.4860829726661658,
+          "num_pairs": 400,
+          "answer_consistency": 0.18
+        },
+        "science": {
+          "avg_expara_sim": 0.4004314612346463,
+          "num_pairs": 400,
+          "answer_consistency": 0.1275
+        },
+        "logic": {
+          "avg_expara_sim": 0.2880514417634828,
+          "num_pairs": 200,
+          "answer_consistency": 0.04
+        }
+      },
+      "by_paraphrase_type": {
+        "lexical": {
+          "avg_expara_sim": 0.45319523033654174,
+          "num_pairs": 350
+        },
+        "syntactic": {
+          "avg_expara_sim": 0.5087252441215565,
+          "num_pairs": 350
+        },
+        "elaborative": {
+          "avg_expara_sim": 0.46559948076436186,
+          "num_pairs": 350
+        },
+        "mixed": {
+          "avg_expara_sim": 0.489200670893302,
+          "num_pairs": 350
+        }
+      }
+    }
+  },
+  "summary": {
+    "num_models": 1,
+    "avg_expara_sim": 0.4791801565289406,
+    "best_model": "Qwen/Qwen2.5-7B-Instruct",
+    "worst_model": "Qwen/Qwen2.5-7B-Instruct"
+  }
+}

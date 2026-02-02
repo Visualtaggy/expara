@@ -1,0 +1,154 @@
+# ExPara Configuration
+# Main configuration for benchmark generation and evaluation
+
+# Dataset configuration
+datasets:
+  gsm8k:
+    name: "gsm8k"
+    split: "train"
+    num_samples: 1000
+    task_type: "math"
+    
+  strategyqa:
+    name: "wics/strategy-qa"
+    split: "train"
+    num_samples: 1000
+    task_type: "commonsense"
+    
+  arc_challenge:
+    name: "allenai/ai2_arc"
+    config: "ARC-Challenge"
+    split: "train"
+    num_samples: 1000
+    task_type: "science"
+    
+  logiqa:
+    name: "lucasmccabe/logiqa"
+    split: "train"
+    num_samples: 1000
+    task_type: "logic"
+
+# Paraphrase generation configuration
+paraphrase:
+  num_paraphrases: 4  # Number of paraphrases per question
+  generators:
+    - "gpt-4"
+    - "claude-3-sonnet"
+  
+  types:
+    - "lexical"      # Synonym substitution
+    - "syntactic"    # Sentence restructuring
+    - "voice"        # Active/passive
+    - "elaborative"  # Added context
+  
+  # Filtering thresholds
+  nli_threshold: 0.8  # Minimum bidirectional entailment score
+  diversity_min_bleu: 0.3  # Minimum BLEU difference from original
+  diversity_max_bleu: 0.85  # Maximum BLEU (too similar = reject)
+
+# Explanation generation configuration
+explanation:
+  models:
+    proprietary:
+      - name: "gpt-4o"
+        provider: "openai"
+      - name: "gpt-4-turbo"
+        provider: "openai"
+      - name: "claude-3-5-sonnet-20241022"
+        provider: "anthropic"
+      - name: "claude-3-opus-20240229"
+        provider: "anthropic"
+      - name: "gemini-1.5-pro"
+        provider: "google"
+    
+    open_source:
+      - name: "meta-llama/Llama-3.1-8B-Instruct"
+        provider: "huggingface"
+      - name: "meta-llama/Llama-3.1-70B-Instruct"
+        provider: "huggingface"
+      - name: "Qwen/Qwen2.5-7B-Instruct"
+        provider: "huggingface"
+      - name: "Qwen/Qwen2.5-72B-Instruct"
+        provider: "huggingface"
+      - name: "mistralai/Mistral-Large-Instruct-2407"
+        provider: "huggingface"
+    
+    reasoning:
+      - name: "deepseek-ai/DeepSeek-R1"
+        provider: "huggingface"
+      - name: "Qwen/QwQ-32B-Preview"
+        provider: "huggingface"
+  
+  prompting:
+    zero_shot_cot: true
+    few_shot_cot: true
+    num_few_shot_examples: 3
+  
+  generation:
+    temperature: [0.0, 0.7]
+    max_tokens: 1024
+    num_samples_per_temp: 5  # For T > 0
+
+# Metrics configuration
+metrics:
+  semantic_sim:
+    model: "sentence-transformers/all-mpnet-base-v2"
+    
+  entailment:
+    model: "microsoft/deberta-v3-large-mnli"
+    
+  step_align:
+    method: "optimal_transport"
+    step_delimiter: "\n"
+    
+  fact_overlap:
+    extraction_model: "gpt-4o-mini"
+    
+  llm_judge:
+    model: "gpt-4o"
+    num_samples: 3  # For consistency
+  
+  # Composite score weights (learned from human correlation)
+  weights:
+    semantic_sim: 0.25
+    entailment_sym: 0.25
+    step_align: 0.20
+    fact_overlap: 0.15
+    llm_judge: 0.15
+
+# Human evaluation configuration
+human_eval:
+  num_samples: 500
+  annotators_per_sample: 3
+  interface: "labelstudio"
+
+# Training configuration (for improvement methods)
+training:
+  consistency_aware_ft:
+    base_model: "meta-llama/Llama-3.1-8B-Instruct"
+    learning_rate: 1e-5
+    batch_size: 4
+    gradient_accumulation_steps: 8
+    num_epochs: 3
+    warmup_ratio: 0.1
+    
+  dpo:
+    beta: 0.1
+    
+  contrastive:
+    temperature: 0.07
+    margin: 0.5
+
+# Output paths
+output:
+  paraphrases: "data/paraphrases/"
+  explanations: "data/explanations/"
+  metrics: "results/metrics/"
+  analysis: "results/analysis/"
+  models: "models/"
+
+# Logging
+logging:
+  level: "INFO"
+  wandb_project: "expara"
+  save_every_n_steps: 100
