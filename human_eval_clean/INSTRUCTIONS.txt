@@ -1,0 +1,26 @@
+
+================================================================================
+HUMAN EVALUATION INSTRUCTIONS - ExPara Study (FIXED VERSION)
+================================================================================
+
+These pairs have been VERIFIED:
+✓ Original and paraphrased questions are semantically similar (>60%)
+✓ Both received the SAME final answer
+✓ Explanations appear different by automated metrics
+
+YOUR TASK:
+Rate how similar the two EXPLANATIONS are (not the questions).
+
+RATING SCALE:
+1 = Completely Different reasoning
+2 = Mostly Different (some overlap)
+3 = Somewhat Similar (same approach, different details)
+4 = Mostly Similar (same reasoning, minor wording differences)
+5 = Essentially Identical
+
+FOCUS ON:
+- Do they use the SAME logical steps?
+- Do they cite the SAME facts/numbers?
+- Would the same expert give BOTH explanations?
+
+================================================================================

@@ -1,0 +1,57 @@
+
+================================================================================
+HUMAN EVALUATION INSTRUCTIONS FOR EXPARA STUDY (CLEAN VERSION)
+================================================================================
+
+IMPORTANT: These pairs have been PRE-FILTERED to ensure:
+✓ Original and paraphrased questions are semantically similar (>60% similarity)
+✓ Both questions received the SAME final answer
+✓ The explanations appear different by automated metrics
+
+YOUR TASK:
+----------
+For each pair, you will see:
+1. An original question and its paraphrased version (VERIFIED as similar)
+2. The model's answer to both (same answer)
+3. The model's explanation/reasoning for both
+
+You need to judge: Are the two explanations SEMANTICALLY EQUIVALENT?
+
+RATING SCALE:
+-------------
+1 = Completely Different
+    - Different reasoning approaches
+    - Different facts or steps mentioned
+    - Would confuse a reader if they saw both
+
+2 = Mostly Different  
+    - Some overlap but significant differences
+    - Different structure or emphasis
+    - Key reasoning steps differ
+
+3 = Somewhat Similar
+    - Same general approach but different details
+    - Some steps match, others don't
+    - Similar conclusion but different path
+
+4 = Mostly Similar
+    - Same reasoning with minor wording differences
+    - Same key facts and steps
+    - Structure might differ slightly
+
+5 = Essentially Identical
+    - Same reasoning, same facts, same structure
+    - Only superficial wording differences
+    - Clearly the same explanation
+
+WHAT TO LOOK FOR:
+-----------------
+✓ Do both explanations use the SAME logical steps?
+✓ Do they cite the SAME facts/numbers?
+✓ Is the reasoning STRUCTURE similar?
+✓ Would the same expert give BOTH explanations?
+
+If explanations use different valid approaches → rate 2-3
+If explanations have same approach, different wording → rate 4-5
+
+================================================================================

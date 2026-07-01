@@ -1,0 +1,20 @@
+
+================================================================================
+FILTERING SUMMARY
+================================================================================
+
+Total pairs examined: 11000
+
+FILTERED OUT:
+- Low question similarity (<0.6): 1465 (13.3%)
+- Different answers: 8060 (73.3%)
+- Same explanation: 214 (1.9%)
+
+PASSED ALL FILTERS: 1261 (11.5%)
+
+Selected for evaluation: 100
+
+Question similarity distribution of selected pairs:
+- Min: 0.613
+- Max: 0.991
+- Mean: 0.896

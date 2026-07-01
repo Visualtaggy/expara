@@ -1,64 +1,64 @@
 {
-  "timestamp": "2026-01-31T05:58:38.187772",
+  "timestamp": "2026-02-05T03:20:08.091886",
   "models": {
-    "Qwen/Qwen2.5-7B-Instruct": {
-      "expara_sim": 0.4791801565289406,
-      "expara_sim_std": 0.16693735203263438,
-      "answer_consistency": 0.21285714285714286,
+    "mistralai/Mistral-7B-Instruct-v0.3": {
+      "expara_sim": 0.5605960185597137,
+      "expara_sim_std": 0.14550558469545152,
+      "answer_consistency": 0.2321875,
       "metrics": {
-        "semantic_sim": 0.8111915952073676,
-        "entailment_sym": 0.35947628176368845,
-        "step_align": 0.5479098251856852,
-        "fact_overlap": 0.03369465846465587,
+        "semantic_sim": 0.8247309340962965,
+        "entailment_sym": 0.5571157256700325,
+        "step_align": 0.6447256920405172,
+        "fact_overlap": 0.013998749507140014,
         "llm_judge": 0.0
       },
-      "divergence_rate": 0.28187919463087246,
+      "divergence_rate": 0.19919246298788695,
       "by_task_type": {
         "math": {
-          "avg_expara_sim": 0.6465903930687383,
-          "num_pairs": 400,
-          "answer_consistency": 0.4175
+          "avg_expara_sim": 0.6471481825300768,
+          "num_pairs": 1000,
+          "answer_consistency": 0.285
         },
         "commonsense": {
-          "avg_expara_sim": 0.4860829726661658,
-          "num_pairs": 400,
-          "answer_consistency": 0.18
+          "avg_expara_sim": 0.5915676396845486,
+          "num_pairs": 1000,
+          "answer_consistency": 0.287
         },
         "science": {
-          "avg_expara_sim": 0.4004314612346463,
-          "num_pairs": 400,
-          "answer_consistency": 0.1275
+          "avg_expara_sim": 0.48895493909175103,
+          "num_pairs": 1000,
+          "answer_consistency": 0.143
         },
         "logic": {
-          "avg_expara_sim": 0.2880514417634828,
+          "avg_expara_sim": 0.3311824904235399,
           "num_pairs": 200,
-          "answer_consistency": 0.04
+          "answer_consistency": 0.14
         }
       },
       "by_paraphrase_type": {
         "lexical": {
-          "avg_expara_sim": 0.45319523033654174,
-          "num_pairs": 350
+          "avg_expara_sim": 0.5429470174068526,
+          "num_pairs": 800
         },
         "syntactic": {
-          "avg_expara_sim": 0.5087252441215565,
-          "num_pairs": 350
+          "avg_expara_sim": 0.5836546353907862,
+          "num_pairs": 800
         },
         "elaborative": {
-          "avg_expara_sim": 0.46559948076436186,
-          "num_pairs": 350
+          "avg_expara_sim": 0.5447241820845743,
+          "num_pairs": 800
         },
         "mixed": {
-          "avg_expara_sim": 0.489200670893302,
-          "num_pairs": 350
+          "avg_expara_sim": 0.5710582393566423,
+          "num_pairs": 800
         }
       }
     }
   },
   "summary": {
     "num_models": 1,
-    "avg_expara_sim": 0.4791801565289406,
-    "best_model": "Qwen/Qwen2.5-7B-Instruct",
-    "worst_model": "Qwen/Qwen2.5-7B-Instruct"
+    "avg_expara_sim": 0.5605960185597137,
+    "best_model": "mistralai/Mistral-7B-Instruct-v0.3",
+    "worst_model": "mistralai/Mistral-7B-Instruct-v0.3"
   }
 }
